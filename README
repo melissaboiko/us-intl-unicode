@@ -1,0 +1,87 @@
+﻿intl-unicode and alt-intl-unicode
+=================================
+
+This is a XKB US keyboard layout that uses Unicode combining
+characters instead of deadkeys.  If you don’t know what the previous
+sentence means, you’re probably not interested (short explanation:
+Unicode combining characters are sexier, more powerful, and more
+general; but they’re often not well supported by applications, and
+you’d need to change your typing habits).
+
+Two layouts are offered.  “us(intl-unicode)” preserves equivalence
+with “us(intl)” deadkey positions; “us(alt-intl-unicode)” breaks this
+compatibility when I though doing so would be more mnemonic or
+Unicodeish.
+
+Installation
+============
+
+    sudo cp us /usr/share/X11/xkb/symbols/us # or make install
+
+I don’t know how to add custom layouts witout modifying the system
+file, sorry.  Be careful your packaging system might override the new
+file (in Debian/Ubuntu, use dpkg-divert(8) to prevent that).
+
+Usage
+=====
+Choose one of:
+
+    setxkbmap -layout 'us(intl-unicode)'
+    setxkbmap -layout 'us(alt-intl-unicode)'
+
+Typing in a combining-based layout has a few important differences
+from “us(intl)”:
+
+ - You need to use the right Alt keys (aka AltGr) to type combining
+   sequences (accents, diacritics, &c.).  Pressing the keys alone will
+   just generate their ASCII versions immediately.  This is like the
+   "us(altgr-intl)" variant.  It is convenient for programmers, but
+   perhaps not for human beings.
+ - You type the modifiers after the base letters, not before.  This is
+   like handwriting, and unlike typewriting.  For example, with
+   us(intl):
+
+     <key '> → [nothing] ; <key a> → á
+
+   With us(intl-unicode):
+
+     <key a> → a         ; <key '> → á
+
+   This postfix method has the advantage of avoiding hidden states;
+   pressing a key always change something in the screen.
+
+ - The combining sequences are stored internally by the computer as
+   separate “characters” (code points).  In the example above:
+
+   - The letter “á” in the deadkeys version is the single code point
+     U+00E1 (latin small letter a with acute).
+
+   - The letter “á” in the combining version is stored as two code
+     points, U+0061 (latin small leter a) and U+0301 (combining acute
+     accent).
+
+   Applications differ on whether they’ll treat combining sequences as
+   a single character or not when editing, counting, searching,
+   formatting &c.
+
+ - You can combine multiple diacritics.  Diacritics at the same
+   position (above, below) will generally stack outward.  More than
+   two or three isn’t well-supported, but you can push it as long as
+   you want.  With alt-intl-unicode:
+
+      <kbd c> <kbd ,> <kbd '>: ḉ # c with cedilla AND acute
+
+      <kbd a> <kbd '> <kbd -> <kbd ,> <kbd .>: ạ̧́̄  # a with acute,
+      macron, cedilla, and dot below
+
+Typing miscellaneous Unicode symbols
+====================================
+
+If you’re looking for convenient methods for inputting unusual Unicode
+characters such as typographic symbols and dingbats, well, this is not
+what this layout is about at all.  I recommend setting a Compose key
+(Multi_key) with xmodmap(1); then read
+/usr/share/X11/locale/en_US.UTF-8/Compose to see the possibilities.
+You can buff it up with your own Compose sequences in ~/.XCompose.  If
+you start to get addicted, you might like to try the
+pointless-xcompose package from yours truly.
