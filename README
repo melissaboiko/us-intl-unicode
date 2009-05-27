@@ -18,7 +18,7 @@ Unicodeish.
 Installation
 ============
 
-    sudo cp us /usr/share/X11/xkb/symbols/us # or make install
+    sudo cp us /usr/share/X11/xkb/symbols/us # or make install/make divert
 
 I don’t know how to add custom layouts witout modifying the system
 file, sorry.  Be careful your packaging system might override the new
