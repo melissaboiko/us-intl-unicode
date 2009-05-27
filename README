@@ -36,9 +36,9 @@ from “us(intl)”:
 
  - You need to use the right Alt key (aka AltGr) to type combining
    sequences (accents, diacritics, &c.).  Pressing the keys alone will
-   just generate their ASCII versions immediately.  This is like the
-   "us(altgr-intl)" variant.  It is convenient for programmers, but
-   perhaps not for human beings.
+   just generate their ASCII versions immediately.  This behavior is
+   just like the Xorg “us(altgr-intl)” variant; it is convenient for
+   programmers, but perhaps not for human beings.
  - You type the modifiers after the base letters, not before.  This is
    like handwriting, and unlike typewriting.  For example, with
    us(intl):
