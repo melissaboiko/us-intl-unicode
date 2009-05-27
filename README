@@ -5,8 +5,10 @@ This is a XKB US keyboard layout that uses Unicode combining
 characters instead of deadkeys.  If you don’t know what the previous
 sentence means, you’re probably not interested (short explanation:
 Unicode combining characters are sexier, more powerful, and more
-general; but they’re often not well supported by applications, and
-you’d need to change your typing habits).
+general; but you’d need to change your typing habits, and the result
+often is not well supported by applications (in fact, the combining
+sequences in this very README might display wrong in whatever you’re
+using to read it!)).
 
 Two layouts are offered.  “us(intl-unicode)” preserves equivalence
 with “us(intl)” deadkey positions; “us(alt-intl-unicode)” breaks this
@@ -32,7 +34,7 @@ Choose one of:
 Typing in a combining-based layout has a few important differences
 from “us(intl)”:
 
- - You need to use the right Alt keys (aka AltGr) to type combining
+ - You need to use the right Alt key (aka AltGr) to type combining
    sequences (accents, diacritics, &c.).  Pressing the keys alone will
    just generate their ASCII versions immediately.  This is like the
    "us(altgr-intl)" variant.  It is convenient for programmers, but
@@ -45,7 +47,7 @@ from “us(intl)”:
 
    With us(intl-unicode):
 
-     <key a> → a         ; <key '> → á
+     <key a> → a         ; <key AltGr '> → á
 
    This postfix method has the advantage of avoiding hidden states;
    pressing a key always change something in the screen.
@@ -69,10 +71,10 @@ from “us(intl)”:
    two or three isn’t well-supported, but you can push it as long as
    you want.  With alt-intl-unicode:
 
-      <kbd c> <kbd ,> <kbd '>: ḉ # c with cedilla AND acute
+      <kbd c> <kbd AltGr ,> <kbd AltGr '>: ḉ # c with cedilla AND acute
 
-      <kbd a> <kbd '> <kbd -> <kbd ,> <kbd .>: ạ̧́̄  # a with acute,
-      macron, cedilla, and dot below
+      <kbd a> <kbd AltGr '> <kbd AltGr -> <kbd AltGr ,> <kbd AltGr.>: ạ̧́̄
+      # a with acute, macron, cedilla, and dot below
 
 Typing miscellaneous Unicode symbols
 ====================================
