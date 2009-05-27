@@ -781,15 +781,15 @@ xkb_symbols "altgr-intl" {
 // counting &c., and won't be smart enough to do canonical equivalence
 // when searching, &c.
 //
-// Notice with Unicode combining you use "handwriting order", not
-// "typewriting order" as deadkeys do.  That is, you first type the
+// With Unicode combining you use "handwriting order", not
+// "typewriting order" as with deadkeys.  That is, you first type the
 // base character, then the diacritics/accents/modifiers.  This has
 // the advantage of avoiding hidden states --- each keypress changes
 // something on screen.
 //
-// TODO: as of now, this duplicates us(intl) with combining.  With
-// care, perhaps we could add more combining marks not present in
-// intl, to support all major languages.
+// TODO: as of now, this duplicates all us(intl) functionality with
+// combining.  With care, perhaps we could add more combining marks
+// not present in intl, and support all major languages.
 partial alphanumeric_keys
 xkb_symbols "intl-unicode" {
 
@@ -833,13 +833,13 @@ xkb_symbols "intl-unicode" {
  key <AE12> { [ equal, plus,	 U030B, U031B ] };
 
  // we don't do combining latin letters and combining enclosures
- // because they often have no support.
+ // because support for those is very rare.
 };
 
 // XCompose is out! Unicode combining is in! For those of us who live
 // on the edge: A keymap using Unicode combining characters instead of
 // deadkeys. This variation does break compatibility with us-intl,
-// according to what I thought would be more mnemonic or Unicodeish.
+// whenever I thought it would be more mnemonic or Unicodeish.
 partial alphanumeric_keys
 xkb_symbols "alt-intl-unicode" {
 
@@ -853,7 +853,7 @@ xkb_symbols "alt-intl-unicode" {
  // an important typographic character.
  key <AE11> { [ minus, underscore, U0304, U2014 ] };
 
- // belowdot, abovedot (caron at coma/less, per above)
+ // belowdot, abovedot (caron at coma/less key, per above)
  key <AB09> { [ period, greater, U0323, U0307 ] };
 
 };
