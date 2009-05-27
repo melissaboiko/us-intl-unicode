@@ -5,10 +5,10 @@ This is a XKB US keyboard layout that uses Unicode combining
 characters instead of deadkeys.  If you don’t know what the previous
 sentence means, you’re probably not interested (short explanation:
 Unicode combining characters are sexier, more powerful, and more
-general; but you’d need to change your typing habits, and the result
-often is not well supported by applications (in fact, the combining
-sequences in this very README might display wrong in whatever you’re
-using to read it!)).
+general; but you’d need to change your typing habits, and the
+resulting output often is not well supported by applications (in fact,
+the combining sequences in this very README might display wrong in
+whatever you’re using to read it!)).
 
 Two layouts are offered.  “us(intl-unicode)” preserves equivalence
 with “us(intl)” deadkey positions; “us(alt-intl-unicode)” breaks this
