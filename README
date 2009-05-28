@@ -18,11 +18,21 @@ Unicodeish.
 Installation
 ============
 
-    sudo cp us /usr/share/X11/xkb/symbols/us # or make install/make divert
+    sudo cp us /usr/share/X11/xkb/symbols/us
+
+or
+    sudo make install    # copy over system file, with backup
+    sudo make install-ln # symlink system file to here, with backup
+
+or, in Debian or Ubuntu,
+
+    sudo make divert    # same as install, but prevent overwrite by dpkg
+    sudo make divert-ln # same as install-ln, but prevent overwrite by dpkg
 
 I don’t know how to add custom layouts witout modifying the system
 file, sorry.  Be careful your packaging system might override the new
 file (in Debian/Ubuntu, use dpkg-divert(8) to prevent that).
+“uninstall” and “undivert” make targets are also provided.
 
 Usage
 =====
