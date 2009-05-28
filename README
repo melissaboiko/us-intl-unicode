@@ -104,6 +104,10 @@ characters such as typographic symbols and dingbats, well, this is not
 what this layout is about at all.  I recommend setting a Compose key
 (Multi_key) with xmodmap(1); then read
 /usr/share/X11/locale/en_US.UTF-8/Compose to see the possibilities.
-You can buff it up with your own Compose sequences in ~/.XCompose.  If
-you start to get addicted, you might like to try the
+You can buff it up with your own Compose sequences in ~/.XCompose.
+The Compose method is particularly useful in conjunction with
+intl-unicode — you can input precomposed characters with Compose, and
+combining characters with AltGr.
+
+If you start to get addicted, perhaps you’d like to try the
 pointless-xcompose package from yours truly.
