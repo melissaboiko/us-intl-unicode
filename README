@@ -76,6 +76,26 @@ from “us(intl)”:
       <kbd a> <kbd AltGr '> <kbd AltGr -> <kbd AltGr ,> <kbd AltGr.>: ạ̧́̄
       # a with acute, macron, cedilla, and dot below
 
+Some fonts that support combining
+=================================
+
+  - DejaVu (ttf; serif, sans, mono; free)
+  - Monospace (ttf; mono; free)
+  - Gentium (ttf; serif; free)
+  - -gnu-unifont-medium-r-normal--16-160-75-75-c-80-iso10646-1
+    (X; mono; free)
+  - efont (X; mono; free; should be used as fallback from core X font)
+
+  - Corbel (Verdana-like), Consola (Courier-like), and all other new
+    Vista fonts whose name start with C (Windows Vista)
+
+Some fonts that do NOT support combining
+========================================
+  - All vanilla Bitstream Vera and Liberation fonts (common in Linux)
+  - Verdana, Arial, Courier, and other pre-Vista Microsoft fonts
+    (common in Windows)
+  - Monaco, Lucida Grande (common in OS X)
+
 Typing miscellaneous Unicode symbols
 ====================================
 
